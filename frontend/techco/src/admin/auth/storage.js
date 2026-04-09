@@ -1,18 +1,25 @@
-const TOKEN_KEY = "techco_admin_token";
+const TOKEN_KEY = "adminToken";
+const LEGACY_TOKEN_KEY = "techco_admin_token";
 const USER_KEY = "techco_admin_user";
 const USER_EVENT = "techco_admin_user_updated";
 
 export function getAdminToken() {
-  return localStorage.getItem(TOKEN_KEY) || "";
+  return (
+    localStorage.getItem(TOKEN_KEY) ||
+    localStorage.getItem(LEGACY_TOKEN_KEY) ||
+    ""
+  );
 }
 
 export function setAdminToken(token) {
   if (!token) return;
   localStorage.setItem(TOKEN_KEY, token);
+  localStorage.setItem(LEGACY_TOKEN_KEY, token);
 }
 
 export function clearAdminToken() {
   localStorage.removeItem(TOKEN_KEY);
+  localStorage.removeItem(LEGACY_TOKEN_KEY);
 }
 
 export function getAdminUser() {

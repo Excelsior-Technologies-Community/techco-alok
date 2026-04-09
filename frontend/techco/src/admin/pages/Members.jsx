@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { api } from "../api/client";
+import { createMember, deleteMember, getMembers } from "../api/api";
 import "../styles/admin.css";
 
 export default function Members() {
@@ -22,8 +22,8 @@ export default function Members() {
     setOk("");
     setLoading(true);
     try {
-      const res = await api.get("/api/member");
-      const data = res?.data || res;
+      const res = await getMembers();
+      const data = res?.data?.data;
       setMembers(Array.isArray(data) ? data : []);
     } catch (e) {
       setError(e.message);
@@ -45,7 +45,7 @@ export default function Members() {
       Object.entries(form).forEach(([k, v]) => fd.append(k, v));
       if (imageFile) fd.append("image", imageFile);
 
-      await api.postForm("/api/member/admin", fd);
+      await createMember(fd);
       setOk("Member added");
       setForm({
         name: "",
@@ -65,7 +65,7 @@ export default function Members() {
     setError("");
     setOk("");
     try {
-      await api.delete(`/api/member/admin/${id}`);
+      await deleteMember(id);
       setOk("Member deleted");
       await load();
     } catch (e2) {

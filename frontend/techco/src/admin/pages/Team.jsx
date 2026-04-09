@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { api } from "../api/client";
+import { getTeam, upsertTeam } from "../api/api";
 import "../styles/admin.css";
 
 export default function Team() {
@@ -21,8 +21,8 @@ export default function Team() {
     setOk("");
     setLoading(true);
     try {
-      const res = await api.get("/api/team");
-      const data = res?.data || res;
+      const res = await getTeam();
+      const data = res?.data?.data;
       if (data) {
         setForm({
           breadcrumbText: data.breadcrumbText || "",
@@ -55,7 +55,7 @@ export default function Team() {
       fd.append("description", form.description);
       if (rightImageFile) fd.append("rightImage", rightImageFile);
 
-      await api.postForm("/api/team/admin", fd);
+      await upsertTeam(fd);
       setOk("Saved successfully");
       setRightImageFile(null);
       await load();

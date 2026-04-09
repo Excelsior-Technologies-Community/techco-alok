@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { api } from "../api/client";
+import { loginAdmin } from "../api/api";
 import { setAdminToken, setAdminUser } from "../auth/storage";
 import "../styles/admin.css";
 
@@ -16,11 +16,11 @@ export default function Login() {
     setError("");
     setLoading(true);
     try {
-      const res = await api.postJson("/api/admin/login", { email, password });
-      const token = res?.token || res?.data?.token;
+      const res = await loginAdmin({ email, password });
+      const token = res?.data?.token;
       if (!token) throw new Error("Token not received from server");
       setAdminToken(token);
-      if (res?.user) setAdminUser(res.user);
+      if (res?.data?.user) setAdminUser(res.data.user);
       navigate("/admin", { replace: true });
     } catch (err) {
       setError(err.message || "Login failed");

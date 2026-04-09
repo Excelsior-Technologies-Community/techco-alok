@@ -96,6 +96,7 @@
 .admin-grid {
   display: grid;
   gap: 12px;
+  margin: 10px 0;
 }
 
 .admin-grid--2 {
@@ -103,6 +104,7 @@
 }
 
 .admin-field {
+  margin: 10px 0;
   display: grid;
   gap: 6px;
 }
@@ -263,7 +265,7 @@
 
 .admin-muted {
   color: rgba(15, 23, 42, 0.6);
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .admin-table {

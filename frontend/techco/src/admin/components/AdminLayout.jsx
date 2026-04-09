@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { api, toAssetUrl } from "../api/client";
+import { getAdminProfile, toAssetUrl } from "../api/api";
 import {
   clearAdminToken,
   clearAdminUser,
@@ -22,12 +22,11 @@ export function AdminLayout() {
 
   useEffect(() => {
     let alive = true;
-    api
-      .get("/api/admin/profile")
+    getAdminProfile()
       .then((res) => {
         if (!alive) return;
-        setMe(res);
-        setAdminUser(res);
+        setMe(res.data);
+        setAdminUser(res.data);
       })
       .catch(() => {});
     return () => {

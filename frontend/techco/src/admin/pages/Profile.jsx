@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { api, toAssetUrl } from "../api/client";
+import { getAdminProfile, toAssetUrl, updateAdminProfile } from "../api/api";
 import { getAdminUser, setAdminUser } from "../auth/storage";
 import "../styles/admin.css";
 
@@ -19,11 +19,11 @@ export default function Profile() {
     setOk("");
     setLoading(true);
     try {
-      const res = await api.get("/api/admin/profile");
-      setMe(res);
-      setAdminUser(res);
-      setName(res?.name || "");
-      setEmail(res?.email || "");
+      const res = await getAdminProfile();
+      setMe(res.data);
+      setAdminUser(res.data);
+      setName(res?.data?.name || "");
+      setEmail(res?.data?.email || "");
     } catch (e) {
       setError(e.message);
     } finally {
@@ -46,8 +46,8 @@ export default function Profile() {
       fd.append("email", email);
       if (imageFile) fd.append("image", imageFile);
 
-      const res = await api.putForm("/api/admin/update", fd);
-      const user = res?.user || res?.data?.user;
+      const res = await updateAdminProfile(fd);
+      const user = res?.data?.user;
       if (user) {
         setMe(user);
         setAdminUser(user);

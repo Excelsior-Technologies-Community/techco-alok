@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { api } from "../api/client";
+import {
+  addBetterFeature,
+  deleteBetterFeature,
+  getBetter,
+  upsertBetter,
+} from "../api/api";
 import "../styles/admin.css";
 
 export default function Better() {
@@ -24,8 +29,8 @@ export default function Better() {
     setOk("");
     setLoading(true);
     try {
-      const res = await api.get("/api/better");
-      const data = res?.data || res;
+      const res = await getBetter();
+      const data = res?.data?.data;
       if (data) {
         setForm({
           badgeText: data.badgeText || "",
@@ -58,8 +63,8 @@ export default function Better() {
       fd.append("features", JSON.stringify(features));
       if (leftImageFile) fd.append("leftImage", leftImageFile);
 
-      const res = await api.postForm("/api/better/admin", fd);
-      const data = res?.data || res;
+      const res = await upsertBetter(fd);
+      const data = res?.data?.data || res?.data;
       setOk("Saved successfully");
       setFeatures(Array.isArray(data?.features) ? data.features : features);
     } catch (e2) {
@@ -77,8 +82,8 @@ export default function Better() {
       const fd = new FormData();
       fd.append("title", featureTitle);
       if (featureIconFile) fd.append("icon", featureIconFile);
-      const res = await api.postForm("/api/better/admin/feature", fd);
-      const data = res?.data || res;
+      const res = await addBetterFeature(fd);
+      const data = res?.data?.data || res?.data;
       setFeatures(Array.isArray(data?.features) ? data.features : []);
       setFeatureTitle("");
       setFeatureIconFile(null);
@@ -92,8 +97,8 @@ export default function Better() {
     setError("");
     setOk("");
     try {
-      const res = await api.delete(`/api/better/admin/feature/${featureId}`);
-      const data = res?.data || res;
+      const res = await deleteBetterFeature(featureId);
+      const data = res?.data?.data || res?.data;
       setFeatures(Array.isArray(data?.features) ? data.features : []);
       setOk("Feature deleted");
     } catch (e2) {
