@@ -14,6 +14,7 @@ const aboutusRoutes = require("./Routes/aboutusRoutes");
 const betterRoutes = require("./Routes/betterRoutes");
 const teamRoutes = require("./Routes/teamRoutes");
 const memberRoutes = require("./Routes/memberRoutes");
+const blogRoutes = require("./Routes/blogRoutes");
 //
 const app = express();
 connectDB();
@@ -30,6 +31,7 @@ app.use("/api/aboutus", aboutusRoutes);
 app.use("/api/better", betterRoutes);
 app.use("/api/team", teamRoutes);
 app.use("/api/member", memberRoutes);
+app.use("/api/blogs", blogRoutes);
 //
 
 app.get("/", (req, res) => {
