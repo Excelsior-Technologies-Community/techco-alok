@@ -15,6 +15,8 @@ const betterRoutes = require("./Routes/betterRoutes");
 const teamRoutes = require("./Routes/teamRoutes");
 const memberRoutes = require("./Routes/memberRoutes");
 const blogRoutes = require("./Routes/blogRoutes");
+const careerRoutes = require("./Routes/careerRoutes");
+const serviceproRoutes = require("./Routes/serviceproRouter");
 //
 const app = express();
 connectDB();
@@ -32,6 +34,8 @@ app.use("/api/better", betterRoutes);
 app.use("/api/team", teamRoutes);
 app.use("/api/member", memberRoutes);
 app.use("/api/blogs", blogRoutes);
+app.use("/api/career", careerRoutes);
+app.use("/api/servicepro", serviceproRoutes);
 //
 
 app.get("/", (req, res) => {

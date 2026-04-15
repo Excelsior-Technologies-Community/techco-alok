@@ -83,7 +83,7 @@ const Header = () => {
                                                                                 </Link>
                                                                             </span>
                                                                         </div>
-                                                                        <Link>About Us</Link>
+                                                                        <Link to="">About Us</Link>
                                                                     </div>
                                                                     <p>Learn more about Techno</p>
                                                                 </div>
