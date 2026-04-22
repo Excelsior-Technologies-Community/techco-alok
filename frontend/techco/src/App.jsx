@@ -11,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Contact from './pages/Contact';
 import { AdminRoutes } from './admin/routes/AdminRoutes';
 
 function PublicLayout() {
@@ -32,6 +33,7 @@ function App() {
         {/* Public site */}
         <Route path="/*" element={<PublicLayout />}>
           <Route path="" element={<div />} />
+          <Route path="contactus" element={<Contact />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

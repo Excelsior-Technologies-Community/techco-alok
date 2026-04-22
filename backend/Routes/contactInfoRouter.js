@@ -13,7 +13,7 @@ const {
 
 router.get("/info", getInfo);
 router.post("/admin/info", authMiddleware, upload.single("image"), createInfo);
-router.put("/admin/info", authMiddleware, upload.single("image"), updateInfo);
-router.delete("/admin/info", authMiddleware, deleteInfo);
+router.put("/admin/info/:id", authMiddleware, upload.single("image"), updateInfo);
+router.delete("/admin/info/:id", authMiddleware, deleteInfo);
 
 module.exports = router;

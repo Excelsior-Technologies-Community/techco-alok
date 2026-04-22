@@ -58,6 +58,29 @@ const replyToMessage = async (req, res) => {
 
     await message.save();
 
+    // Send email using nodemailer
+    try {
+      const transporter = require("nodemailer").createTransport({
+        service: "gmail",
+        auth: {
+          user: process.env.EMAIL_USER || "your-email@gmail.com",
+          pass: process.env.EMAIL_PASS || "your-app-password",
+        },
+      });
+
+      const mailOptions = {
+        from: process.env.EMAIL_USER || "your-email@gmail.com",
+        to: message.email,
+        subject: `Reply: ${message.subject || "Your Contact Message"}`,
+        text: `Hello ${message.name},\n\nWe have received your message:\n"${message.message}"\n\nOur Reply:\n${reply}\n\nBest Regards,\nTechco Team`,
+      };
+
+      await transporter.sendMail(mailOptions);
+    } catch (mailError) {
+      console.log("Error sending email:", mailError);
+      // We still return 200 because the reply was saved
+    }
+
     res.status(200).json({
       success: true,
       message: "Message sent successfully",

@@ -3,8 +3,14 @@ const Portfolio = require("../Models/Portfolio");
 const createPortfolio = async (req, res) => {
   try {
     let data = req.body;
+    console.log("BODY:", req.body);
+    console.log("FILE:", req.file);
+
     if (typeof data.content === "string") {
       data.content = JSON.parse(data.content);
+    }
+    if (req.file) {
+      data.thumbnail = req.file.path;
     }
 
     const portfolio = await Portfolio.create(data);
@@ -15,6 +21,7 @@ const createPortfolio = async (req, res) => {
       data: portfolio,
     });
   } catch (error) {
+    console.log(error);
     res.status(500).json({
       success: false,
       message: error.message,

@@ -522,7 +522,7 @@ const Header = () => {
                                     </div>
                                 </li>
                                 <li className='list-items header-drop-btns'>
-                                    <Link>
+                                    <Link to={"/contactus"}>
                                         Contact
                                     </Link>
                                 </li>

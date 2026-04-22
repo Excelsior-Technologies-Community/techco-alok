@@ -9,6 +9,8 @@ import Profile from "../pages/Profile";
 import Better from "../pages/Better";
 import Team from "../pages/Team";
 import Members from "../pages/Members";
+import ContactInfo from "../pages/ContactInfo";
+import ContactMessages from "../pages/ContactMessages";
 
 export function AdminRoutes() {
   return (
@@ -22,6 +24,8 @@ export function AdminRoutes() {
           <Route path="better" element={<Better />} />
           <Route path="team" element={<Team />} />
           <Route path="members" element={<Members />} />
+          <Route path="contact-info" element={<ContactInfo />} />
+          <Route path="messages" element={<ContactMessages />} />
         </Route>
       </Route>
 

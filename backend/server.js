@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const connectDB = require("./config/db");
 const errorMiddleware = require("./Middlewares/errorMiddleware");
+const path = require("path");
 
 // All routes
 
@@ -17,6 +18,7 @@ const memberRoutes = require("./Routes/memberRoutes");
 const blogRoutes = require("./Routes/blogRoutes");
 const careerRoutes = require("./Routes/careerRoutes");
 const serviceproRoutes = require("./Routes/serviceproRouter");
+const portfolioRoutes = require("./Routes/portfolioRoutes");
 //
 const app = express();
 connectDB();
@@ -24,6 +26,7 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // only routes
 
 app.use("/api/admin", adminRoutes);
@@ -36,6 +39,7 @@ app.use("/api/member", memberRoutes);
 app.use("/api/blogs", blogRoutes);
 app.use("/api/career", careerRoutes);
 app.use("/api/servicepro", serviceproRoutes);
+app.use("/api/portfolio", portfolioRoutes);
 //
 
 app.get("/", (req, res) => {

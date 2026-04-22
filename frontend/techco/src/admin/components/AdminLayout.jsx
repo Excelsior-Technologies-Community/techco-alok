@@ -61,6 +61,12 @@ export function AdminLayout() {
           <NavLink to="/admin/members" className="admin-nav__link">
             <i className="fa-solid fa-user" /> Members
           </NavLink>
+          <NavLink to="/admin/contact-info" className="admin-nav__link">
+            <i className="fa-solid fa-address-book" /> Contact Info
+          </NavLink>
+          <NavLink to="/admin/messages" className="admin-nav__link">
+            <i className="fa-solid fa-envelope" /> Messages
+          </NavLink>
         </nav>
 
         <NavLink to="/admin/profile" className="admin-me">

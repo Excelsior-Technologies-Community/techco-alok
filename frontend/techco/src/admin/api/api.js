@@ -61,6 +61,26 @@ export const updateMember = (id, formData) =>
   });
 export const deleteMember = (id) => API.delete(`/member/admin/${id}`);
 
+// ---------- contact info ----------
+export const getContactInfo = () => API.get("/contactinfo/info");
+export const createContactInfo = (formData) =>
+  API.post("/contactinfo/admin/info", formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const updateContactInfo = (id, formData) =>
+  API.put(`/contactinfo/admin/info/${id}`, formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const deleteContactInfo = (id) => API.delete(`/contactinfo/admin/info/${id}`);
+
+// ---------- contact msg ----------
+export const getContactMsgs = () => API.get("/contact/admin/msg");
+export const updateContactMsgStatus = (id, status) =>
+  API.put(`/contact/admin/msg/${id}`, { status });
+export const replyContactMsg = (id, reply) =>
+  API.put(`/contact/admin/msg/reply/${id}`, { reply });
+export const deleteContactMsg = (id) => API.delete(`/contact/admin/msg/${id}`);
+
 export const toAssetUrl = (maybePath) => {
   if (!maybePath) return "";
   if (/^https?:\/\//i.test(maybePath)) return maybePath;

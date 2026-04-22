@@ -5,14 +5,6 @@ const createInfo = async (req, res) => {
     const { heading, para } = req.body;
     const image = req.file ? req.file.filename : req.body.image;
 
-    const existing = await ContactInfo.findOne();
-    if (existing) {
-      return res.status(400).json({
-        success: false,
-        message: "Contact info already exists. Use update instead",
-      });
-    }
-
     const newInfo = await ContactInfo.create({
       image,
       heading,
@@ -35,7 +27,7 @@ const createInfo = async (req, res) => {
 
 const getInfo = async (req, res) => {
   try {
-    const info = await ContactInfo.findOne();
+    const info = await ContactInfo.find();
 
     res.status(200).json({
       success: true,
@@ -51,11 +43,12 @@ const getInfo = async (req, res) => {
 
 const updateInfo = async (req, res) => {
   try {
+    const { id } = req.params;
     const { heading, para } = req.body;
     const image = req.file ? req.file.filename : req.body.image;
 
-    const updated = await ContactInfo.findOneAndUpdate(
-      {},
+    const updated = await ContactInfo.findByIdAndUpdate(
+      id,
       { image, heading, para },
       { new: true, runValidators: true },
     );
@@ -82,7 +75,8 @@ const updateInfo = async (req, res) => {
 
 const deleteInfo = async (req, res) => {
   try {
-    const deleted = await ContactInfo.findOneAndDelete();
+    const { id } = req.params;
+    const deleted = await ContactInfo.findByIdAndDelete(id);
 
     if (!deleted) {
       return res.status(404).json({
