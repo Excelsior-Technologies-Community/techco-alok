@@ -83,7 +83,7 @@ const Header = () => {
                                                                                 </Link>
                                                                             </span>
                                                                         </div>
-                                                                        <Link to="">About Us</Link>
+                                                                        <Link to="aboutus">About Us</Link>
                                                                     </div>
                                                                     <p>Learn more about Techno</p>
                                                                 </div>
@@ -484,7 +484,7 @@ const Header = () => {
                                             <div className="drop-inner">
                                                 <ul>
                                                     <li className='drop-menu-item'>
-                                                        <Link>
+                                                        <Link to="aboutus">
                                                             About Us
                                                         </Link>
                                                     </li>

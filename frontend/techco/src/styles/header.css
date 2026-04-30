@@ -267,7 +267,7 @@ ul {
 .ceo-content h3 {
     font-size: 20px;
     line-height: 20px;
-    font-family: axiformasemibold;
+    font-family: 'Axiforma SemiBold';
     margin-bottom: 14px;
     color: #fff;
     font-weight: 700;
@@ -501,7 +501,7 @@ ul {
     margin-bottom: 22px;
     color: #020842;
     display: inline-block;
-    font-family: 'Axiforma', sans-serif;
+    font-family: 'Axiforma Regular', sans-serif;
     font-weight: 700;
     font-size: 21.4px;
     line-height: 20px;
@@ -541,7 +541,7 @@ ul {
 .first-headig h3 {
     margin: 0;
     color: #fff;
-    font-family: 'Axiforma', sans-serif;
+    font-family: 'Axiforma Regular', sans-serif;
     font-size: 14px;
     line-height: 14px;
     font-weight: 700;
@@ -550,7 +550,7 @@ ul {
 .second-heading h4 {
     margin-top: 10px;
     color: #fff;
-    font-family: 'Axiforma', sans-serif;
+    font-family: 'Axiforma Regular', sans-serif;
     font-size: 30px;
     font-weight: 700;
 }
@@ -590,7 +590,7 @@ ul {
 .started {
     border: 1px solid #E3F0FF !important;
     color: #020842;
-    font-family: 'Axiforma', sans-serif;
+    font-family: 'Axiforma Regular', sans-serif;
     padding: 0 30px !important;
 }
 

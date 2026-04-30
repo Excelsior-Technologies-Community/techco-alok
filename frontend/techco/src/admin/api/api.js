@@ -73,6 +73,23 @@ export const updateContactInfo = (id, formData) =>
   });
 export const deleteContactInfo = (id) => API.delete(`/contactinfo/admin/info/${id}`);
 
+// ---------- about us ----------
+export const getAbout = () => API.get("/aboutus");
+export const upsertAbout = (formData) =>
+  API.post("/aboutus/admin", formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const addAboutCard = (formData) =>
+  API.post("/aboutus/admin/card", formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const updateAboutCard = (cardId, formData) =>
+  API.put(`/aboutus/admin/card/${cardId}`, formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const deleteAboutCard = (cardId) =>
+  API.delete(`/aboutus/admin/card/${cardId}`);
+
 // ---------- contact msg ----------
 export const getContactMsgs = () => API.get("/contact/admin/msg");
 export const updateContactMsgStatus = (id, status) =>

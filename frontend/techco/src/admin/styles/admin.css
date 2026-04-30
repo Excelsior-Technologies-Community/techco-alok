@@ -159,8 +159,12 @@
 
 .admin-btn--ghost {
   background: transparent;
-  border-color: rgba(226, 232, 240, 0.2);
-  color: #e2e8f0;
+  border-color: rgba(0, 68, 235, 0.2);
+  color: #0044eb;
+}
+
+.admin-btn--ghost:hover {
+  background: rgba(0, 68, 235, 0.05);
 }
 
 .admin-me {
@@ -297,6 +301,7 @@
 
 .admin-actions {
   display: flex;
+  gap: 10px;
   justify-content: flex-end;
 }
 
