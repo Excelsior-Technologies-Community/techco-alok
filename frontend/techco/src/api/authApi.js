@@ -12,6 +12,8 @@ export const submitContactMsg = (data) => API.post("/contact/submit", data);
 export const getAboutDetails = () => API.get("/aboutus");
 export const getMembers = () => API.get("/member");
 export const getBetterData = () => API.get("/better");
+export const getCareerData = () => API.get("/career");
+export const getServicePro = () => API.get("/servicepro");
 
 export const toAssetUrl = (maybePath) => {
   if (!maybePath) return "";

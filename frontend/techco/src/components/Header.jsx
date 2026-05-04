@@ -512,7 +512,7 @@ const Header = () => {
                                                         </Link>
                                                     </li>
                                                     <li className='drop-menu-item'>
-                                                        <Link>
+                                                        <Link to="/career">
                                                             Careers
                                                         </Link>
                                                     </li>

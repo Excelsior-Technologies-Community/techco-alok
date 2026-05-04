@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import video from '../assets/images/video-image.webp'
-import { getAboutDetails, toAssetUrl, getBetterData } from '../api/authApi'
+import { getAboutDetails, toAssetUrl } from '../api/authApi'
 import client1 from '../assets/images/client_logo_1.webp';
 import client2 from '../assets/images/client_logo_2.webp';
 import client3 from '../assets/images/client_logo_3.webp';
@@ -20,6 +20,7 @@ import { Autoplay, FreeMode } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useInView } from 'react-intersection-observer';
 import TopExperts from '../components/TopExperts';
+import Better from '../components/Better';
 
 const AnimatedNumber = ({ end, duration = 2000 }) => {
     const [count, setCount] = useState(0);
@@ -55,23 +56,12 @@ const AnimatedNumber = ({ end, duration = 2000 }) => {
 
 const About = () => {
     const [about, setAbout] = useState(null)
-    const [better, setBetter] = useState(null)
 
     useEffect(() => {
         getAboutDetails()
             .then((res) => setAbout(res.data.data))
             .catch((err) => {
                 console.error('Failed to load About data:', err)
-            })
-
-        getBetterData()
-            .then((res) => {
-                if (res.data && res.data.success) {
-                    setBetter(res.data.data)
-                }
-            })
-            .catch((err) => {
-                console.error('Failed to load Better data:', err)
             })
     }, [])
 
@@ -364,50 +354,7 @@ const About = () => {
                 </div>
             </section>
             <TopExperts />
-            <section className="Better-section">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-6">
-                            <div className="better-image-container">
-                                {better?.leftImage && (
-                                    <img src={toAssetUrl(better.leftImage)} alt="Better Section" />
-                                )}
-                            </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="better-padding">
-                                <div className="better-heading">
-                                    <div className="better-title">
-                                        <span className='better-badge brand-badge'>{better?.badgeText || ''}</span>
-                                        {better?.breadcrumbText || ''}
-                                    </div>
-                                    <div className="better-main-heading">
-                                        <h2>
-                                            {better?.heading || ''}
-                                        </h2>
-                                    </div>
-                                </div>
-                                <div className="row">
-                                    {better?.features && better.features.map((feature, index) => (
-                                        <div className="col-lg-6" key={feature._id || index}>
-                                            <div className="features-box">
-                                                <div className="feature-box-inner">
-                                                    <span className='feature-img-container'>
-                                                        {feature.icon && <img src={toAssetUrl(feature.icon)} alt={feature.title} />}
-                                                    </span>
-                                                    <div className="feature-text-area">
-                                                        <a href="#">{feature.title}</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <Better />
         </main>
     )
 }

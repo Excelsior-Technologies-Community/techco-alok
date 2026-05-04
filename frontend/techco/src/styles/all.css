@@ -174,6 +174,9 @@
     box-shadow: 0 0 0 0 #FFFFFF;
 }
 
+
+/* ==================== Aboutus-Page======================*/
+
 .about-video img {
     width: 100%;
 }
@@ -219,15 +222,6 @@
     background: rgba(0, 0, 0, 0.18);
     transition: background 0.25s ease;
 }
-
-/* .play-overlay::before {
-    content: '';
-    width: 94px;
-    height: 94px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.12);
-    position: absolute;
-} */
 
 .play-icon {
     position: relative;
@@ -792,8 +786,18 @@
     align-items: center;
     padding: 16px 20px 16px 16px;
     border-radius: 10px;
+    transition: 300ms ease;
     background-color: #fff;
     box-shadow: 0 1px 2px 0 rgba(174, 191, 210, 0.3);
+}
+
+.feature-box-inner:hover {
+    box-shadow: 0 20px 30px 0 rgba(174, 191, 210, 0.3);
+    transform: translateY(-2px);
+}
+
+.feature-box-inner:hover .feature-text-area a {
+    color: #0044EB;
 }
 
 .feature-img-container {
@@ -814,11 +818,174 @@
     height: auto;
 }
 
-.feature-text-area a{
+.feature-text-area a {
     font-family: 'axiformasemibold', 'Inter', sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: 20px;
     display: inline-block;
     color: #020442;
+}
+
+/* ==================== Career-Page ====================== */
+
+.Ransform-section {
+    padding-top: 120px;
+    background-color: #E3F0FF;
+    box-shadow: 0 0 0 0 #FFFFFF;
+}
+
+.ransform-image-container {
+    margin-bottom: 50px;
+}
+
+.ransform-image-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.ransform-heading {
+    font-size: 40px;
+    line-height: 55px;
+    margin-bottom: 20px;
+    display: inline-block;
+    font-weight: 700;
+    color: #020442;
+    font-family: 'Axiforma Bold', sans-serif;
+}
+
+.ransform-para p {
+    margin-bottom: 24px;
+    font-size: 18px;
+    line-height: 32px;
+    color: #49515B;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.ransform-text-area {
+    margin-bottom: 38px;
+}
+
+/* ==================== ServiceProcess-Component ====================== */
+
+.process-accordion {
+    padding-right: 20px;
+}
+
+.process-item {
+    cursor: pointer;
+    border-bottom: 1px solid #CCE3FF;
+    transition: all 0.3s ease;
+}
+
+.process-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.process-header:hover h3,
+.process-header:hover .process-icon i{
+    color: #0044EB;
+}
+
+.process-title {
+    font-size: 20px;
+    font-weight: 500;
+    background-color: transparent;
+    color: #020842;
+    font-family: 'Axiforma Bold', sans-serif;
+    margin: 0;
+}
+
+.process-item.active .process-title {
+    color: #0044EB;
+}
+
+.process-number {
+    margin-right: 15px;
+}
+
+.process-icon {
+    font-size: 18px;
+    color: #020842;
+}
+
+.process-content {
+    background-color: #CCE3FF;
+    padding: 20px 34px;
+}
+
+.process-content p {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #49515B;
+    font-weight: 500;
+}
+
+.oval-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.oval-item {
+    display: flex;
+    height: 147px;
+    flex-wrap: wrap;
+    font-size: 24px;
+    font-weight: 500;
+    max-width: 452px;
+    line-height: 36px;
+    border-radius: 100%;
+    align-items: center;
+    color: #020842;
+    justify-content: center;
+    font-family: 'Axiforma Medium', sans-serif;
+    border: 1px solid #020842;
+    transition: 300ms ease;
+    width: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    margin-top: -40px;
+    position: relative;
+    z-index: 1;
+}
+
+.oval-item:first-child {
+    margin-top: 0;
+}
+
+.oval-item span {
+    text-align: center;
+}
+
+.oval-item.active {
+    background-color: #0044EB;
+    color: #fff;
+    z-index: 10;
+    box-shadow: 0 15px 35px rgba(0, 68, 235, 0.2);
+    border-color: transparent;
+}
+
+.oval-item:hover:not(.active) {
+    border-color: #020842;
+    z-index: 5;
+    background-color: rgba(0, 68, 235, 0.05);
+}
+
+.servicepro-header h3 {
+    margin-bottom: 17px;
+    font-size: 35px;
+    line-height: 50px;
+    font-weight: 700;
+    color: #020442;
+    font-family: 'Axiforma Bold', sans-serif;
 }

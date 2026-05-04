@@ -98,6 +98,17 @@ export const replyContactMsg = (id, reply) =>
   API.put(`/contact/admin/msg/reply/${id}`, { reply });
 export const deleteContactMsg = (id) => API.delete(`/contact/admin/msg/${id}`);
 
+// ---------- career ----------
+export const getAdminCareer = () => API.get("/career");
+export const upsertCareer = (formData) =>
+  API.post("/career/admin", formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+
+// ---------- service process ----------
+export const getAdminServicePro = () => API.get("/servicepro");
+export const upsertServicePro = (data) => API.post("/servicepro/admin", data);
+
 export const toAssetUrl = (maybePath) => {
   if (!maybePath) return "";
   if (/^https?:\/\//i.test(maybePath)) return maybePath;

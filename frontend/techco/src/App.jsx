@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Contact from './pages/Contact';
+import Career from './pages/Career';
 import About from './pages/About';
 import { AdminRoutes } from './admin/routes/AdminRoutes';
 
@@ -36,6 +37,7 @@ function App() {
           <Route path="" element={<div />} />
           <Route path="contactus" element={<Contact />} />
           <Route path="aboutus" element={<About />} />
+          <Route path="career" element={<Career />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

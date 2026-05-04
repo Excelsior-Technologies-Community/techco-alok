@@ -12,6 +12,8 @@ import Members from "../pages/Members";
 import ContactInfo from "../pages/ContactInfo";
 import ContactMessages from "../pages/ContactMessages";
 import AboutUs from "../pages/AboutUs";
+import Career from "../pages/Career";
+import ServicePro from "../pages/ServicePro";
 
 export function AdminRoutes() {
   return (
@@ -28,6 +30,8 @@ export function AdminRoutes() {
           <Route path="contact-info" element={<ContactInfo />} />
           <Route path="messages" element={<ContactMessages />} />
           <Route path="about-us" element={<AboutUs />} />
+          <Route path="career" element={<Career />} />
+          <Route path="service-process" element={<ServicePro />} />
         </Route>
       </Route>
 

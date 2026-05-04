@@ -14,6 +14,8 @@ export function AdminLayout() {
   const navigate = useNavigate();
   const [me, setMe] = useState(() => getAdminUser());
 
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
   const logout = () => {
     clearAdminToken();
     clearAdminUser();
@@ -41,7 +43,7 @@ export function AdminLayout() {
   }, []);
 
   return (
-    <div className="admin-shell">
+    <div className={`admin-shell ${!isSidebarOpen ? "sidebar-closed" : ""}`}>
       <aside className="admin-sidebar">
         <div className="admin-brand">
           <div className="admin-brand__title">Techco Admin</div>
@@ -57,6 +59,12 @@ export function AdminLayout() {
           </NavLink>
           <NavLink to="/admin/about-us" className="admin-nav__link">
             <i className="fa-solid fa-info-circle" /> About Us
+          </NavLink>
+          <NavLink to="/admin/career" className="admin-nav__link">
+            <i className="fa-solid fa-briefcase" /> Careers
+          </NavLink>
+          <NavLink to="/admin/service-process" className="admin-nav__link">
+            <i className="fa-solid fa-gears" /> Service Process
           </NavLink>
           <NavLink to="/admin/team" className="admin-nav__link">
             <i className="fa-solid fa-people-group" /> Team
@@ -94,9 +102,17 @@ export function AdminLayout() {
       </aside>
 
       <main className="admin-main">
-        <Outlet />
+        <header className="admin-topbar">
+          <button className="admin-toggle" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+            <i className={`fa-solid ${isSidebarOpen ? "fa-bars-staggered" : "fa-bars"}`} />
+          </button>
+        </header>
+        <div className="admin-content">
+          <Outlet />
+        </div>
       </main>
     </div>
   );
+
 }
 
