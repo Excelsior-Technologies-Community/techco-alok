@@ -14,6 +14,7 @@ import ContactMessages from "../pages/ContactMessages";
 import AboutUs from "../pages/AboutUs";
 import Career from "../pages/Career";
 import ServicePro from "../pages/ServicePro";
+import Blogs from "../pages/Blogs";
 
 export function AdminRoutes() {
   return (
@@ -23,6 +24,7 @@ export function AdminRoutes() {
       <Route element={<ProtectedRoute />}>
         <Route element={<AdminLayout />}>
           <Route path="" element={<Dashboard />} />
+          <Route path="blogs" element={<Blogs />} />
           <Route path="profile" element={<Profile />} />
           <Route path="better" element={<Better />} />
           <Route path="team" element={<Team />} />

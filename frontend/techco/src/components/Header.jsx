@@ -497,7 +497,7 @@ const Header = () => {
                                                             <div className="drop-inner">
                                                                 <ul>
                                                                     <li className='drop-menu-item'>
-                                                                        <Link>Our Blogs</Link>
+                                                                        <Link to='ourblog'>Our Blogs</Link>
                                                                     </li>
                                                                     <li className='drop-menu-item'>
                                                                         <Link>Blogs Details</Link>

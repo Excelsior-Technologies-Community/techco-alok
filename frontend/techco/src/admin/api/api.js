@@ -109,6 +109,19 @@ export const upsertCareer = (formData) =>
 export const getAdminServicePro = () => API.get("/servicepro");
 export const upsertServicePro = (data) => API.post("/servicepro/admin", data);
 
+// ---------- blog ----------
+export const getAdminBlogs = () => API.get("/blogs");
+export const getAdminBlogById = (id) => API.get(`/blogs/${id}`);
+export const createBlog = (formData) =>
+  API.post("/blogs", formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const updateBlog = (id, formData) =>
+  API.put(`/blogs/${id}`, formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const deleteBlog = (id) => API.delete(`/blogs/${id}`);
+
 export const toAssetUrl = (maybePath) => {
   if (!maybePath) return "";
   if (/^https?:\/\//i.test(maybePath)) return maybePath;
