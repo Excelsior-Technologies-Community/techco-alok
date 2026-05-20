@@ -20,11 +20,12 @@ const blogSchema = new mongoose.Schema(
       {
         type: {
           type: String,
-          enum: ["heading", "paragraph", "image"],
+          enum: ["heading", "paragraph", "image", "list", "numbered-list", "image-grid", "image-list"],
           required: true,
         },
         text: String,
         url: String,
+        url2: String,
       },
     ],
     author: {

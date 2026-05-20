@@ -98,7 +98,7 @@ const Header = () => {
                                                                                 </Link>
                                                                             </span>
                                                                         </div>
-                                                                        <Link>Our Pricing</Link>
+                                                                        <Link to='pricing'>Our Pricing</Link>
                                                                     </div>
                                                                     <p>Streamlined Pricing</p>
                                                                 </div>
@@ -419,7 +419,7 @@ const Header = () => {
                                                                                     <Link>Case Studies</Link>
                                                                                 </li>
                                                                                 <li className='service-li'>
-                                                                                    <Link>Our Pricing</Link>
+                                                                                    <Link to='pricing'>Our Pricing</Link>
                                                                                 </li>
                                                                                 <li className='service-li'>
                                                                                     <Link>Features</Link>
@@ -500,7 +500,7 @@ const Header = () => {
                                                                         <Link to='ourblog'>Our Blogs</Link>
                                                                     </li>
                                                                     <li className='drop-menu-item'>
-                                                                        <Link>Blogs Details</Link>
+                                                                        <Link to='ourblog'>Blogs Details</Link>
                                                                     </li>
                                                                 </ul>
                                                             </div>

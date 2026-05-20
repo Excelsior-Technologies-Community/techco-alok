@@ -15,6 +15,7 @@ export const getBetterData = () => API.get("/better");
 export const getCareerData = () => API.get("/career");
 export const getServicePro = () => API.get("/servicepro");
 export const getBlogs = () => API.get("/blogs");
+export const getBlogBySlug = (slug) => API.get(`/blogs/slug/${slug}`);
 
 export const toAssetUrl = (maybePath) => {
   if (!maybePath) return "";

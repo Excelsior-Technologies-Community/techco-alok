@@ -25,6 +25,11 @@ exports.createBlog = async (req, res) => {
       req.files.forEach((file) => {
         if (file.fieldname === "image") {
           blogData.image = `/uploads/blogs/${file.filename}`;
+        } else if (file.fieldname.startsWith("sectionImage2_")) {
+          const index = parseInt(file.fieldname.split("_")[1]);
+          if (blogData.sections[index]) {
+            blogData.sections[index].url2 = `/uploads/blogs/${file.filename}`;
+          }
         } else if (file.fieldname.startsWith("sectionImage_")) {
           const index = parseInt(file.fieldname.split("_")[1]);
           if (blogData.sections[index]) {
@@ -142,6 +147,15 @@ exports.updateBlog = async (req, res) => {
             if (fs.existsSync(oldPath)) fs.unlinkSync(oldPath);
           }
           updateData.image = `/uploads/blogs/${file.filename}`;
+        } else if (file.fieldname.startsWith("sectionImage2_")) {
+          const index = parseInt(file.fieldname.split("_")[1]);
+          if (updateData.sections[index]) {
+            if (blog.sections[index] && blog.sections[index].url2) {
+              const oldSectionPath = path.join(__dirname, "..", blog.sections[index].url2.replace("/", "\\"));
+              if (fs.existsSync(oldSectionPath)) fs.unlinkSync(oldSectionPath);
+            }
+            updateData.sections[index].url2 = `/uploads/blogs/${file.filename}`;
+          }
         } else if (file.fieldname.startsWith("sectionImage_")) {
           const index = parseInt(file.fieldname.split("_")[1]);
           if (updateData.sections[index]) {
@@ -194,8 +208,11 @@ exports.deleteBlog = async (req, res) => {
 
     if (blog.sections && blog.sections.length > 0) {
       blog.sections.forEach((section) => {
-        if (section.type === "image" && section.url) {
+        if ((section.type === "image" || section.type === "image-grid" || section.type === "image-list") && section.url) {
           deleteFile(section.url);
+        }
+        if (section.type === "image-grid" && section.url2) {
+          deleteFile(section.url2);
         }
       });
     }

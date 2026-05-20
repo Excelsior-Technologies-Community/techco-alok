@@ -61,7 +61,7 @@ export default function Blogs() {
   const addSection = (type) => {
     setFormData((prev) => ({
       ...prev,
-      sections: [...prev.sections, { type, text: "", url: null, preview: null }],
+      sections: [...prev.sections, { type, text: "", url: null, url2: null, preview: null, preview2: null }],
     }));
   };
 
@@ -80,13 +80,18 @@ export default function Blogs() {
     });
   };
 
-  const handleSectionFileChange = (index, e) => {
+  const handleSectionFileChange = (index, e, isSecond = false) => {
     const file = e.target.files[0];
     if (file) {
       setFormData((prev) => {
         const newSections = [...prev.sections];
-        newSections[index].file = file;
-        newSections[index].preview = URL.createObjectURL(file);
+        if (isSecond) {
+          newSections[index].file2 = file;
+          newSections[index].preview2 = URL.createObjectURL(file);
+        } else {
+          newSections[index].file = file;
+          newSections[index].preview = URL.createObjectURL(file);
+        }
         return { ...prev, sections: newSections };
       });
     }
@@ -111,14 +116,18 @@ export default function Blogs() {
       const sectionsToSubmit = formData.sections.map((s, index) => {
         const cleanSection = { type: s.type, text: s.text };
         if (s.url && !s.file) cleanSection.url = s.url;
+        if (s.url2 && !s.file2) cleanSection.url2 = s.url2;
         return cleanSection;
       });
       data.append("sections", JSON.stringify(sectionsToSubmit));
 
       // Append section files
       formData.sections.forEach((s, index) => {
-        if (s.type === "image" && s.file) {
+        if ((s.type === "image" || s.type === "image-grid" || s.type === "image-list") && s.file) {
           data.append(`sectionImage_${index}`, s.file);
+        }
+        if (s.type === "image-grid" && s.file2) {
+          data.append(`sectionImage2_${index}`, s.file2);
         }
       });
 
@@ -149,7 +158,7 @@ export default function Blogs() {
       tags: blog.tags.join(", "),
       date: blog.date,
       image: blog.image,
-      sections: blog.sections.map(s => ({ ...s, preview: s.url ? toAssetUrl(s.url) : null })),
+      sections: blog.sections.map(s => ({ ...s, preview: s.url ? toAssetUrl(s.url) : null, preview2: s.url2 ? toAssetUrl(s.url2) : null })),
     });
     setPreviewImage(blog.image ? toAssetUrl(blog.image) : null);
     setIsFormOpen(true);
@@ -327,7 +336,7 @@ export default function Blogs() {
                   <div className="admin-field">
                     <input
                       type="file"
-                      onChange={(e) => handleSectionFileChange(index, e)}
+                      onChange={(e) => handleSectionFileChange(index, e, false)}
                       accept="image/*"
                     />
                     {section.preview && (
@@ -337,10 +346,77 @@ export default function Blogs() {
                     )}
                   </div>
                 )}
+                {(section.type === "list" || section.type === "numbered-list") && (
+                  <textarea
+                    className="admin-input admin-textarea"
+                    placeholder="Enter list items here, separated by new lines"
+                    value={section.text}
+                    onChange={(e) => handleSectionChange(index, "text", e.target.value)}
+                    rows={4}
+                  />
+                )}
+
+                {section.type === "image-grid" && (
+                  <div className="admin-grid admin-grid--2">
+                    <div className="admin-field">
+                      <label className="admin-field__label">Image 1</label>
+                      <input
+                        type="file"
+                        onChange={(e) => handleSectionFileChange(index, e, false)}
+                        accept="image/*"
+                      />
+                      {section.preview && (
+                        <div className="mt-2" style={{ maxWidth: "200px" }}>
+                          <img src={section.preview} alt="Section Preview 1" className="img-fluid rounded" />
+                        </div>
+                      )}
+                    </div>
+                    <div className="admin-field">
+                      <label className="admin-field__label">Image 2</label>
+                      <input
+                        type="file"
+                        onChange={(e) => handleSectionFileChange(index, e, true)}
+                        accept="image/*"
+                      />
+                      {section.preview2 && (
+                        <div className="mt-2" style={{ maxWidth: "200px" }}>
+                          <img src={section.preview2} alt="Section Preview 2" className="img-fluid rounded" />
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+                {section.type === "image-list" && (
+                  <div className="admin-grid admin-grid--2">
+                    <div className="admin-field">
+                      <label className="admin-field__label">Image</label>
+                      <input
+                        type="file"
+                        onChange={(e) => handleSectionFileChange(index, e, false)}
+                        accept="image/*"
+                      />
+                      {section.preview && (
+                        <div className="mt-2" style={{ maxWidth: "200px" }}>
+                          <img src={section.preview} alt="Section Preview" className="img-fluid rounded" />
+                        </div>
+                      )}
+                    </div>
+                    <div className="admin-field">
+                      <label className="admin-field__label">List Items (one per line)</label>
+                      <textarea
+                        className="admin-input admin-textarea"
+                        placeholder="Enter list items here..."
+                        value={section.text}
+                        onChange={(e) => handleSectionChange(index, "text", e.target.value)}
+                        rows={4}
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
 
-            <div className="d-flex gap-2 mt-3">
+            <div className="d-flex flex-wrap gap-2 mt-3">
               <button
                 type="button"
                 className="admin-btn admin-btn--ghost"
@@ -361,6 +437,34 @@ export default function Blogs() {
                 onClick={() => addSection("image")}
               >
                 <i className="fa-solid fa-image" /> Add Image
+              </button>
+              <button
+                type="button"
+                className="admin-btn admin-btn--ghost"
+                onClick={() => addSection("list")}
+              >
+                <i className="fa-solid fa-list-ul" /> Add List
+              </button>
+              <button
+                type="button"
+                className="admin-btn admin-btn--ghost"
+                onClick={() => addSection("numbered-list")}
+              >
+                <i className="fa-solid fa-list-ol" /> Add Numbered List
+              </button>
+              <button
+                type="button"
+                className="admin-btn admin-btn--ghost"
+                onClick={() => addSection("image-grid")}
+              >
+                <i className="fa-solid fa-images" /> Add Image Grid
+              </button>
+              <button
+                type="button"
+                className="admin-btn admin-btn--ghost"
+                onClick={() => addSection("image-list")}
+              >
+                <i className="fa-solid fa-file-image" /> Add Image + List
               </button>
             </div>
           </div>

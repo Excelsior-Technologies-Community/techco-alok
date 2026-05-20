@@ -1687,3 +1687,714 @@
     border-color: #0044EB;
 
 }
+
+/* ----------------------------- Blog detail page------------------------- */
+
+.blog-detail-main-sec {
+    background-color: #e3f0ff !important;
+    padding-top: 120px;
+}
+
+.blog-title {
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #020842;
+    font-family: 'Axiforma Bold', sans-serif;
+}
+
+.text-muted {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+    margin-bottom: 24px !important;
+    color: #49515B !important;
+}
+
+/* Custom Blue Bullet List */
+.custom-blue-bullet-list {
+    list-style: none;
+    padding-left: 0 !important;
+}
+
+.custom-blue-bullet-list li {
+    position: relative;
+    padding-left: 10px;
+    font-size: 1.1rem;
+    color: #49515B;
+    margin-bottom: 12px;
+    font-family: 'Axiforma Regular', sans-serif;
+}
+
+.custom-blue-bullet-list li::before {
+    content: '•';
+    color: #0044EB;
+    display: inline-block;
+    font-weight: 900;
+    width: 1em;
+    margin-left: 10px;
+    position: absolute;
+    left: -15px;
+    font-size: 18px;
+    line-height: 1;
+    top: 6px;
+}
+
+.bord {
+    border-radius: 15px !important;
+}
+
+.bottom-tags {
+    display: flex;
+    justify-content: space-between;
+}
+
+.anothr-tags {
+    display: flex;
+    padding: 48px 0 0;
+    gap: 10px;
+    height: fit-content;
+    border-top: 1px solid #cce3ff;
+    margin-top: 48px;
+}
+
+.social-share-block {
+    margin-top: 48px;
+    padding-top: 48px;
+}
+
+.article-social-share {
+    float: right;
+}
+
+.social-share-icon ul li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.social-share-icon ul li a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    color: #585858;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: 1px solid #E3F0FF;
+    border-radius: 50%;
+}
+
+.social-share-icon ul li a:hover {
+    color: #fff;
+    background-color: #0044EB;
+    border-color: #0044EB;
+}
+
+.article-author-info {
+    display: flex;
+    background-color: #fff;
+    margin-top: 80px;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.author-info-inner {
+    gap: 30px;
+}
+
+.author-img img {
+    width: 100%;
+    height: auto;
+    margin-right: 16px;
+}
+
+.author-desc h5 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #020842;
+}
+
+.author-bio {
+    font-size: 16px;
+    font-family: 'Axiforma Regular', sans-serif;
+    line-height: 30px;
+    color: #49515B;
+}
+
+.author-website {
+    color: #020842;
+    margin-left: 4px;
+    margin-top: 15px;
+}
+
+.author-website a {
+    color: #020842;
+    font-family: 'Axiforma Regular', sans-serif;
+}
+
+.blog-article-detail .pagenavigation {
+    margin-top: 40px;
+    border-top: 2px solid #020842;
+    padding-top: 20px;
+}
+
+.pagenavigation span {
+    justify-content: space-between;
+    display: flex;
+}
+
+.pagenavigation .previous-btn,
+.pagenavigation .next-btn {
+    border-radius: 5px;
+    border: medium none;
+    cursor: pointer;
+    line-height: 1;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Axiforma Regular', sans-serif;
+    color: #020842;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: #fff;
+    padding: 26px 50px 23px;
+}
+
+.pagenavigation .previous-btn:hover,
+.pagenavigation .next-btn:hover {
+    color: #0044EB;
+}
+
+
+/* ============================== Our Pricing Page =========================== */
+
+.celebrating-features {
+    padding: 120px 0px;
+}
+
+.discover .what-set {
+    margin-bottom: 40px;
+}
+
+.what-set .celebrating-title {
+    font-size: 45px;
+    line-height: 60px;
+    letter-spacing: -1px;
+    color: #020842;
+    font-weight: 700;
+}
+
+.discover-para p {
+    font-size: 18px;
+    line-height: 30px;
+    color: #49515B;
+    font-family: 'axiformasemibold' sans-serif;
+    font-weight: 500;
+}
+
+.rich-doc {
+    position: relative;
+}
+
+.r-docu {
+    padding: 0;
+    margin-bottom: 0;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-left: auto;
+    max-width: 290px;
+    border-radius: 0;
+    transition: 300ms ease;
+    background-color: #fff;
+}
+
+.doc-img {
+    width: 60px;
+    height: 60px;
+    margin: 0 0 32px;
+    border-radius: 100%;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    color: #0044EB;
+    background-color: #0044eb1a;
+}
+
+.r-doc-content h3 {
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 12px;
+    color: #020842;
+    font-weight: 700;
+}
+
+.doc-para p {
+    font-size: 16px;
+    color: #49515B;
+    font-family: 'Axiforma Regular', sans-serif;
+}
+
+.doc-divider {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: #E3F0FF;
+    height: 208px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    display: inline-block;
+    width: 1px;
+}
+
+@media (max-width: 991px) {
+    .doc-divider {
+        display: none;
+    }
+}
+
+.Best-Plan-business {
+    padding-top: 120px;
+    background-color: #e3f0ff;
+    box-shadow: 0 0 0 0 #FFFFFF;
+}
+
+.pricing-heading {
+    text-align: center;
+}
+
+.page-sub-heading {
+    margin-bottom: 18px;
+    display: inline-flex;
+    text-align: center;
+    gap: 8px;
+    align-items: center;
+}
+
+.page-sub-heading span {
+    color: #fff;
+}
+
+.pricing-main-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.pricing-main-heading h2 {
+    font-size: 45px;
+    line-height: 60px;
+    letter-spacing: -1;
+    font-weight: 700;
+    color: #020842;
+    font-family: 'Axiforma Bold', sans-serif;
+}
+
+/* ==================== Pricing Cards ======================*/
+.pricing-card {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 23px 0 rgba(174, 191, 210, 0.3);
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px 0 rgba(174, 191, 210, 0.4);
+    border-color: #0044EB;
+}
+
+.pricing-card.active-card {
+    border: 2px solid #0044EB;
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+.pricing-card.active-card:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+.pricing-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(90deg, #0044EB, #00C6FF);
+    color: #fff;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Axiforma SemiBold', sans-serif;
+    box-shadow: 0 4px 15px rgba(0, 68, 235, 0.4);
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pricing-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #020842;
+    font-family: 'Axiforma Bold', sans-serif;
+    margin-bottom: 10px;
+}
+
+.pricing-desc {
+    color: #6c757d;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.pricing-price {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #E4EEF0;
+}
+
+.pricing-price h2 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #0044EB;
+    font-family: 'Axiforma Bold', sans-serif;
+    margin-bottom: 0;
+}
+
+.pricing-price h2 span {
+    font-size: 16px;
+    color: #6c757d;
+    font-weight: 500;
+    font-family: 'Axiforma Medium', sans-serif;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+    flex-grow: 1;
+}
+
+.pricing-features li {
+    font-size: 16px;
+    color: #49515B;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    font-family: 'Axiforma Medium', sans-serif;
+}
+
+.pricing-features li i {
+    color: #0044EB;
+    margin-right: 12px;
+    font-size: 14px;
+    background-color: rgba(0, 68, 235, 0.1);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.pricing-features li.disable {
+    color: #adb5bd;
+}
+
+.pricing-features li.disable i {
+    color: #adb5bd;
+    background-color: #f8f9fa;
+}
+
+.pricing-footer {
+    text-align: center;
+}
+
+.purchase-btn {}
+
+.pricing-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: 'Axiforma SemiBold', sans-serif;
+    background-color: rgba(0, 68, 235, 0.1);
+    color: #0044EB;
+    border: 1px solid transparent;
+}
+
+.pricing-btn:hover {
+    background-color: #0044EB;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 68, 235, 0.2);
+}
+
+.pricing-btn.active-btn {
+    background: linear-gradient(90deg, #0044EB, #00C6FF);
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 68, 235, 0.3);
+}
+
+.pricing-btn.active-btn:hover {
+    box-shadow: 0 15px 30px rgba(0, 68, 235, 0.4);
+    background: linear-gradient(90deg, #0036bd, #00b4e8);
+}
+
+/* ==================== Horizontal Pricing Cards ======================*/
+.billing-toggle {
+    display: flex;
+    justify-content: center;
+}
+
+.toggle-wrapper {
+    display: inline-flex;
+    background-color: #CCE3FF;
+    border-radius: 50px;
+    padding: 5px;
+}
+
+.toggle-btn {
+    background: transparent;
+    border: none;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #020842;
+    font-family: 'Axiforma Bold', sans-serif;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.toggle-btn.active {
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.discount {
+    background-color: #E6E8F4;
+    color: #49515B;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-family: 'Axiforma Regular', sans-serif;
+    font-weight: 500;
+}
+
+.discount-red {
+    background-color: #FF5A5F;
+    color: #fff;
+}
+
+.pricing-card-horizontal {
+    background-color: #fff;
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 4px 23px 0 rgba(174, 191, 210, 0.3);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.best-offer-badge {
+    position: absolute;
+    top: 0px;
+    right: 30px;
+    width: 54px;
+    height: 70px;
+    z-index: 10;
+}
+
+.card-top {
+    display: flex;
+    overflow: visible;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.price-box {
+    background-color: #cfe2ff;
+    border-radius: 16px;
+    padding: 34px 15px 30px;
+    min-width: 244px;
+    text-align: center;
+}
+
+.price-value {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 5px;
+}
+
+.old-price {
+    font-size: 20px;
+    color: #49515B;
+    font-weight: 400;
+    text-decoration: line-through;
+    font-family: 'Axiforma Medium', sans-serif;
+}
+
+.price-value h2 {
+    font-size: 50px;
+    color: #0044EB;
+    font-weight: 700;
+    margin: 0;
+    font-family: 'Axiforma Bold', sans-serif;
+    line-height: 1;
+}
+
+.price-value h2 span {
+    font-size: 30px;
+}
+
+.save-text {
+    font-size: 13px;
+    color: #49515B;
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-family: 'Axiforma Medium', sans-serif;
+}
+
+.save-text span {
+    color: #020842;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.package-info h3 {
+    font-size: 26px;
+    color: #020842;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-family: 'Axiforma Bold', sans-serif;
+}
+
+.package-info p {
+    color: #49515B;
+    font-size: 15px;
+    margin: 0;
+    font-weight: 500;
+    line-height: 23px;
+}
+
+.features-grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.features-grid li {
+    font-size: 16px;
+    color: #020842;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Axiforma Medium', sans-serif;
+}
+
+.features-grid li i {
+    font-size: 18px;
+    color: #020842;
+}
+
+.features-grid li.disable {
+    color: #adb5bd;
+}
+
+.features-grid li.disable i {
+    color: #adb5bd;
+}
+
+.purchase-btn {
+    background-color: #E3F0FF;
+    color: #020842;
+    border-color: #E3F0FF;
+    gap: 10px;
+    padding: 0px 40px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 1px;
+    display: inline-flex;
+    border-radius: 50px;
+    align-items: center;
+    transition: 300ms ease;
+    text-decoration: none;
+    font-family: 'Axiforma Bold', sans-serif;
+}
+
+.purchase-btn:hover {
+    background-color: #0044EB;
+    color: #fff;
+    border: 1px solid #0044EB;
+    box-shadow: 0 10px 30px 0 rgba(0, 68, 235, 0.26);
+}
+
+.purchase-btn:hover .purch-label {
+    transform: translateY(-81%);
+    visibility: hidden;
+}
+
+.purch-label {
+    position: relative;
+    display: inline-block;
+    padding: 23px 0px 21px;
+    transition: transform 0.4s cubic-bezier(0.15, 0.85, 0.31, 1);
+}
+
+.purchase-btn:hover .purch-label::before {
+    visibility: visible;
+}
+
+.purch-label::before {
+    top: 120%;
+    left: 50%;
+    width: 100%;
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    content: "PURCHASE NOW";
+    transform: translateX(-50%);
+    transition: 300ms ease;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Axiforma Bold', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1;
+}
+
+.purchase-btn i {
+    font-size: 14px;
+}

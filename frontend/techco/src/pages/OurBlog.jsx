@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import ourswiper1 from '../assets/images/our-blog-swiper1.jpg'
 import ourswiper2 from '../assets/images/our-blog-swiper2.jpg'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
@@ -152,9 +153,9 @@ const OurBlog = () => {
                                                             <div className={`article-card ${!blog.image ? 'no-image' : ''}`} key={blog._id}>
                                                                 {blog.image && (
                                                                     <div className="article-image">
-                                                                        <a href={`/blog/${blog.slug}`}>
+                                                                        <Link to={`/blog/${blog.slug}`}>
                                                                             <img src={toAssetUrl(blog.image)} alt={blog.title} />
-                                                                        </a>
+                                                                        </Link>
                                                                     </div>
                                                                 )}
                                                                 <div className="article-details">
@@ -168,7 +169,7 @@ const OurBlog = () => {
                                                                         </span>
                                                                     </div>
                                                                     <h2 className="article-title">
-                                                                        <a href={`/blog/${blog.slug}`}>{blog.title}</a>
+                                                                        <Link to={`/blog/${blog.slug}`}>{blog.title}</Link>
                                                                     </h2>
                                                                     {blog.description && (
                                                                         <p className="article-excerpt">
@@ -176,12 +177,12 @@ const OurBlog = () => {
                                                                         </p>
                                                                     )}
                                                                     <div className="read-more-btn">
-                                                                        <a href={`/blog/${blog.slug}`} className='blog-read-more-btn'>
+                                                                        <Link to={`/blog/${blog.slug}`} className='blog-read-more-btn'>
                                                                             <span className='btn-label'>READ MORE</span>
                                                                             <span className='btn-icon'>
                                                                                 <i className="fa-solid fa-up-right-from-square"></i>
                                                                             </span>
-                                                                        </a>
+                                                                        </Link>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -265,7 +266,7 @@ const OurBlog = () => {
                                             <li key={post._id} className="latest-post-item">
                                                 <div className="post-info">
                                                     <h4 className="post-title">
-                                                        <a href={`/blog/${post.slug}`}>{post.title}</a>
+                                                        <Link to={`/blog/${post.slug}`}>{post.title}</Link>
                                                     </h4>
                                                     <span className="post-date">
                                                         <i className="far fa-calendar-alt"></i> {post.date}

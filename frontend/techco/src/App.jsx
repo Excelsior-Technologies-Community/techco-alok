@@ -14,7 +14,9 @@ import Footer from './components/Footer';
 import Contact from './pages/Contact';
 import Career from './pages/Career';
 import About from './pages/About';
+import BlogDetail from './pages/BlogDetail';
 import OurBlog from './pages/OurBlog';
+import Pricing from './pages/Pricing';
 import { AdminRoutes } from './admin/routes/AdminRoutes';
 
 function PublicLayout() {
@@ -40,6 +42,8 @@ function App() {
           <Route path="aboutus" element={<About />} />
           <Route path="career" element={<Career />} />
           <Route path="ourblog" element={<OurBlog />} />
+          <Route path="pricing" element={<Pricing />} />
+          <Route path="blog/:slug" element={<BlogDetail />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

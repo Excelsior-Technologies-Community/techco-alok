@@ -297,15 +297,15 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div class="top-header sp-module-footer">
-                    <div class="sp-column">
-                        <div class="sp-footer">
-                            <div class="for-shadow">
-                                <div class="column-addons">
-                                    <div class="clearfix">
-                                        <div class="header-top-text">
+                <div className="top-header sp-module-footer">
+                    <div className="sp-column">
+                        <div className="sp-footer">
+                            <div className="for-shadow">
+                                <div className="column-addons">
+                                    <div className="clearfix">
+                                        <div className="header-top-text">
                                             <div className="container">
-                                                <div class="header-content footer-below-content">
+                                                <div className="header-content footer-below-content">
                                                     <p>Copyright © 2024 Techco, All rights reserved.</p>
                                                     <p>Joomla by &nbsp;
                                                         <a href="/" data-discover="true">
