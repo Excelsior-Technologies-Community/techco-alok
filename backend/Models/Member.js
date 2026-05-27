@@ -27,6 +27,27 @@ const memberSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    skillsDescription: {
+      type: String,
+      default: "",
+    },
+    skills: {
+      type: [
+        {
+          name: { type: String, required: true },
+          percentage: { type: Number, required: true },
+        },
+      ],
+      default: [],
+    },
+    educationDescription: {
+      type: String,
+      default: "",
+    },
+    qualifications: {
+      type: [String],
+      default: [],
+    },
   },
   { timestamps: true },
 );

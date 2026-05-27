@@ -34,6 +34,14 @@ const portfolioSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
+    service: {
+      type: String,
+      trim: true,
+    },
+    industry: {
+      type: String,
+      trim: true,
+    },
 
     tags: {
       type: [String],

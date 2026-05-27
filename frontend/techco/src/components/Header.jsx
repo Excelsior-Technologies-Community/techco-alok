@@ -113,7 +113,7 @@ const Header = () => {
                                                                                 </Link>
                                                                             </span>
                                                                         </div>
-                                                                        <Link>Portfolio</Link>
+                                                                        <Link to='portfolio'>Portfolio</Link>
                                                                     </div>
                                                                     <p>Explore our all overview</p>
                                                                 </div>
@@ -128,7 +128,7 @@ const Header = () => {
                                                                                 </Link>
                                                                             </span>
                                                                         </div>
-                                                                        <Link>Portfolio Details</Link>
+                                                                        <Link to="/portfolio/cloud-migration-and-integration-project-it-solutions-portfolio">Portfolio Details</Link>
                                                                     </div>
                                                                     <p>Explore our all overview</p>
                                                                 </div>
@@ -143,7 +143,7 @@ const Header = () => {
                                                                                 </Link>
                                                                             </span>
                                                                         </div>
-                                                                        <Link>Team</Link>
+                                                                        <Link to='team'>Team</Link>
                                                                     </div>
                                                                     <p>We are friendly join our team</p>
                                                                 </div>
@@ -315,12 +315,12 @@ const Header = () => {
                                             <div className="drop-inner">
                                                 <ul>
                                                     <li className='drop-menu-item'>
-                                                        <Link>
+                                                        <Link to='portfolio'>
                                                             Portfolio
                                                         </Link>
                                                     </li>
                                                     <li className='drop-menu-item'>
-                                                        <Link>
+                                                        <Link to="/portfolio/cloud-migration-and-integration-project-it-solutions-portfolio">
                                                             Portfolio Details
                                                         </Link>
                                                     </li>

@@ -57,6 +57,9 @@ export function AdminLayout() {
           <NavLink to="/admin/blogs" className="admin-nav__link">
             <i className="fa-solid fa-newspaper" /> Blogs
           </NavLink>
+          <NavLink to="/admin/portfolios" className="admin-nav__link">
+            <i className="fa-solid fa-folder-open" /> Portfolios
+          </NavLink>
           <NavLink to="/admin/better" className="admin-nav__link">
             <i className="fa-solid fa-star" /> Better
           </NavLink>

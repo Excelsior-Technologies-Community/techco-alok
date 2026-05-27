@@ -2,8 +2,36 @@ const Member = require("../Models/Member");
 
 const createMember = async (req, res) => {
   try {
-    const { name, position, experience, email, phone } = req.body;
+    const {
+      name,
+      position,
+      experience,
+      email,
+      phone,
+      skillsDescription,
+      skills,
+      educationDescription,
+      qualifications,
+    } = req.body;
     const image = req.file ? req.file.path : req.body.image;
+
+    let parsedSkills = [];
+    if (skills) {
+      try {
+        parsedSkills = typeof skills === "string" ? JSON.parse(skills) : skills;
+      } catch (err) {
+        console.error("Error parsing skills in createMember:", err);
+      }
+    }
+
+    let parsedQualifications = [];
+    if (qualifications) {
+      try {
+        parsedQualifications = typeof qualifications === "string" ? JSON.parse(qualifications) : qualifications;
+      } catch (err) {
+        console.error("Error parsing qualifications in createMember:", err);
+      }
+    }
 
     const member = await Member.create({
       name,
@@ -12,6 +40,10 @@ const createMember = async (req, res) => {
       experience,
       email,
       phone,
+      skillsDescription,
+      skills: parsedSkills,
+      educationDescription,
+      qualifications: parsedQualifications,
     });
 
     return res.status(201).json({
@@ -69,7 +101,17 @@ const getMemberById = async (req, res) => {
 const updateMember = async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, position, experience, email, phone } = req.body;
+    const {
+      name,
+      position,
+      experience,
+      email,
+      phone,
+      skillsDescription,
+      skills,
+      educationDescription,
+      qualifications,
+    } = req.body;
     const image = req.file ? req.file.path : req.body.image;
 
     const member = await Member.findById(id);
@@ -86,6 +128,23 @@ const updateMember = async (req, res) => {
     member.email = email ?? member.email;
     member.phone = phone ?? member.phone;
     member.image = image ?? member.image;
+    
+    if (skillsDescription !== undefined) member.skillsDescription = skillsDescription;
+    if (skills !== undefined) {
+      try {
+        member.skills = typeof skills === "string" ? JSON.parse(skills) : skills;
+      } catch (err) {
+        console.error("Error parsing skills in updateMember:", err);
+      }
+    }
+    if (educationDescription !== undefined) member.educationDescription = educationDescription;
+    if (qualifications !== undefined) {
+      try {
+        member.qualifications = typeof qualifications === "string" ? JSON.parse(qualifications) : qualifications;
+      } catch (err) {
+        console.error("Error parsing qualifications in updateMember:", err);
+      }
+    }
 
     await member.save();
 

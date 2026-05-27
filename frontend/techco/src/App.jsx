@@ -17,6 +17,10 @@ import About from './pages/About';
 import BlogDetail from './pages/BlogDetail';
 import OurBlog from './pages/OurBlog';
 import Pricing from './pages/Pricing';
+import Portfolio from './pages/Portfolio';
+import Team from './pages/Team';
+import TeamDetails from './pages/TeamDetails';
+import PortfolioDetails from './pages/PortfolioDetails';
 import { AdminRoutes } from './admin/routes/AdminRoutes';
 
 function PublicLayout() {
@@ -43,6 +47,10 @@ function App() {
           <Route path="career" element={<Career />} />
           <Route path="ourblog" element={<OurBlog />} />
           <Route path="pricing" element={<Pricing />} />
+          <Route path="team" element={<Team />} />
+          <Route path="team/:id" element={<TeamDetails />} />
+          <Route path="portfolio" element={<Portfolio />} />
+          <Route path="portfolio/:slug" element={<PortfolioDetails />} />
           <Route path="blog/:slug" element={<BlogDetail />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

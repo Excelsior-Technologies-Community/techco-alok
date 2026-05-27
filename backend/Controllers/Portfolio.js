@@ -41,7 +41,7 @@ const getallPortfolio = async (req, res) => {
     }
 
     const portfolios = await Portfolio.find(filter)
-      .select("title slug category tags thumbnail shortDescription")
+      .select("title slug category tags thumbnail shortDescription service industry content")
       .sort({ createdAt: -1 });
 
     res.status(200).json({
@@ -86,6 +86,9 @@ const updatePortfolio = async (req, res) => {
 
     if (typeof data.content === "string") {
       data.content = JSON.parse(data.content);
+    }
+    if (req.file) {
+      data.thumbnail = req.file.path;
     }
 
     const updated = await Portfolio.findByIdAndUpdate(id, data, {

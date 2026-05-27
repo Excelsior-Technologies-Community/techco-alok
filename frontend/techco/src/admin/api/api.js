@@ -122,6 +122,19 @@ export const updateBlog = (id, formData) =>
   });
 export const deleteBlog = (id) => API.delete(`/blogs/${id}`);
 
+// ---------- portfolio ----------
+export const getAdminPortfolios = () => API.get("/portfolio");
+export const getAdminPortfolioBySlug = (slug) => API.get(`/portfolio/${slug}`);
+export const createPortfolio = (formData) =>
+  API.post("/portfolio/admin/create", formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const updatePortfolio = (id, formData) =>
+  API.put(`/portfolio/admin/update/${id}`, formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const deletePortfolio = (id) => API.delete(`/portfolio/admin/delete/${id}`);
+
 export const toAssetUrl = (maybePath) => {
   if (!maybePath) return "";
   if (/^https?:\/\//i.test(maybePath)) return maybePath;

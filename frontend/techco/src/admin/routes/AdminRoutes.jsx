@@ -15,6 +15,7 @@ import AboutUs from "../pages/AboutUs";
 import Career from "../pages/Career";
 import ServicePro from "../pages/ServicePro";
 import Blogs from "../pages/Blogs";
+import Portfolios from "../pages/Portfolios";
 
 export function AdminRoutes() {
   return (
@@ -25,6 +26,7 @@ export function AdminRoutes() {
         <Route element={<AdminLayout />}>
           <Route path="" element={<Dashboard />} />
           <Route path="blogs" element={<Blogs />} />
+          <Route path="portfolios" element={<Portfolios />} />
           <Route path="profile" element={<Profile />} />
           <Route path="better" element={<Better />} />
           <Route path="team" element={<Team />} />

@@ -11,11 +11,15 @@ export const getContactInfo = () => API.get("/contactinfo/info");
 export const submitContactMsg = (data) => API.post("/contact/submit", data);
 export const getAboutDetails = () => API.get("/aboutus");
 export const getMembers = () => API.get("/member");
+export const getMemberById = (id) => API.get(`/member/${id}`);
+export const getTeam = () => API.get("/team");
 export const getBetterData = () => API.get("/better");
 export const getCareerData = () => API.get("/career");
 export const getServicePro = () => API.get("/servicepro");
 export const getBlogs = () => API.get("/blogs");
 export const getBlogBySlug = (slug) => API.get(`/blogs/slug/${slug}`);
+export const getPortfolios = () => API.get("/portfolio");
+export const getPortfolioBySlug = (slug) => API.get(`/portfolio/${slug}`);
 
 export const toAssetUrl = (maybePath) => {
   if (!maybePath) return "";
