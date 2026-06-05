@@ -598,6 +598,10 @@ ul {
     background-color: #0044EB !important;
 }
 
+.started:hover .fa-arrow-right {
+    color: #fff;
+}
+
 .started:hover .get {
     color: #fff !important;
 }

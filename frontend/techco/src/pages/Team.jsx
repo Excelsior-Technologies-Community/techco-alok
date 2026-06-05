@@ -106,7 +106,7 @@ const Team = () => {
                                     <Link to="/contactus" className="free-btn">
                                         <span className="btn-label talk-expert">Talk to an Expert</span>
                                         <span className="btn-icon">
-                                            <i className="fa-solid fa-up-right-from-square"></i>
+                                            <i className="fa-solid fa-arrow-right"></i>
                                         </span>
                                     </Link>
                                 </div>

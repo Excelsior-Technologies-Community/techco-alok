@@ -1,34 +1,64 @@
+/* Google Fonts Outfit mapped to Axiforma font families */
+
+/* Regular */
 @font-face {
     font-family: 'Axiforma Regular';
-    src: url('./assets/fonts/Axiforma-Regular.woff2') format('woff2'),
-         url('./assets/fonts/Axiforma-Regular.woff') format('woff');
+    src: url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC1C4E.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'axiformaregular';
+    src: url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4TC1C4E.ttf) format('truetype');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
+/* Medium */
 @font-face {
     font-family: 'Axiforma Medium';
-    src: url('./assets/fonts/Axiforma-Medium.woff2') format('woff2'),
-         url('./assets/fonts/Axiforma-Medium.woff') format('woff');
+    src: url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4QK1C4E.ttf) format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'axiformamedium';
+    src: url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4QK1C4E.ttf) format('truetype');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 
+/* SemiBold */
 @font-face {
     font-family: 'Axiforma SemiBold';
-    src: url('./assets/fonts/Axiforma-SemiBold.woff2') format('woff2'),
-         url('./assets/fonts/Axiforma-SemiBold.woff') format('woff');
+    src: url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4e6yC4E.ttf) format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'axiformasemibold';
+    src: url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4e6yC4E.ttf) format('truetype');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
 
+/* Bold */
 @font-face {
     font-family: 'Axiforma Bold';
-    src: url('./assets/fonts/Axiforma-Bold.woff2') format('woff2'),
-         url('./assets/fonts/Axiforma-Bold.woff') format('woff');
+    src: url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4deyC4E.ttf) format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'axiformabold';
+    src: url(https://fonts.gstatic.com/s/outfit/v15/QGYyz_MVcBeNP4NjuGObqx1XmO1I4deyC4E.ttf) format('truetype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;

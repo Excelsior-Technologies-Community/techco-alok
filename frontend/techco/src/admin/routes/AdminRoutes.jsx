@@ -14,6 +14,7 @@ import ContactMessages from "../pages/ContactMessages";
 import AboutUs from "../pages/AboutUs";
 import Career from "../pages/Career";
 import ServicePro from "../pages/ServicePro";
+import Services from "../pages/Services";
 import Blogs from "../pages/Blogs";
 import Portfolios from "../pages/Portfolios";
 
@@ -36,6 +37,7 @@ export function AdminRoutes() {
           <Route path="about-us" element={<AboutUs />} />
           <Route path="career" element={<Career />} />
           <Route path="service-process" element={<ServicePro />} />
+          <Route path="services" element={<Services />} />
         </Route>
       </Route>
 

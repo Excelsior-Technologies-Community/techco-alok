@@ -69,6 +69,9 @@ export function AdminLayout() {
           <NavLink to="/admin/career" className="admin-nav__link">
             <i className="fa-solid fa-briefcase" /> Careers
           </NavLink>
+          <NavLink to="/admin/services" className="admin-nav__link">
+            <i className="fa-solid fa-bell-concierge" /> Main Services
+          </NavLink>
           <NavLink to="/admin/service-process" className="admin-nav__link">
             <i className="fa-solid fa-gears" /> Service Process
           </NavLink>

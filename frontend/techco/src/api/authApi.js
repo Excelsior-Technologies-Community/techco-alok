@@ -10,6 +10,7 @@ const API = axios.create({
 export const getContactInfo = () => API.get("/contactinfo/info");
 export const submitContactMsg = (data) => API.post("/contact/submit", data);
 export const getAboutDetails = () => API.get("/aboutus");
+export const getServicesDetails = () => API.get("/services");
 export const getMembers = () => API.get("/member");
 export const getMemberById = (id) => API.get(`/member/${id}`);
 export const getTeam = () => API.get("/team");

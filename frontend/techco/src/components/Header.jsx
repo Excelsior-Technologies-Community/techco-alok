@@ -158,7 +158,7 @@ const Header = () => {
                                                                                 </Link>
                                                                             </span>
                                                                         </div>
-                                                                        <Link>Team Details</Link>
+                                                                        <Link to="/team/69d62d94d05ef2a6b6d106be">Team Details</Link>
                                                                     </div>
                                                                     <p>We are friendly join our team</p>
                                                                 </div>
@@ -173,7 +173,7 @@ const Header = () => {
                                                                                 </Link>
                                                                             </span>
                                                                         </div>
-                                                                        <Link>Services</Link>
+                                                                        <Link to='servicespage'>Services</Link>
                                                                     </div>
                                                                     <p>Happy to help you!</p>
                                                                 </div>
@@ -188,7 +188,7 @@ const Header = () => {
                                                                                 </Link>
                                                                             </span>
                                                                         </div>
-                                                                        <Link>Service Details</Link>
+                                                                        <Link to='servicedetail'>Service Details</Link>
                                                                     </div>
                                                                     <p>Happy to help you!</p>
                                                                 </div>
@@ -200,7 +200,7 @@ const Header = () => {
                                                                     <a href="" className='free-btn'>
                                                                         <span className='btn-label'>Free <br />Consultation</span>
                                                                         <span className='btn-icon'>
-                                                                            <i className="fa-solid fa-up-right-from-square"></i>
+                                                                            <i className="fa-solid fa-arrow-right"></i>
                                                                         </span>
                                                                     </a>
                                                                 </div>
@@ -457,7 +457,7 @@ const Header = () => {
                                                                         <a href="" className='free-btn' style={{ backgroundColor: "white", borderColor: "white" }}>
                                                                             <span className='btn-label read' style={{ color: "#020842" }}>read <br />case</span>
                                                                             <span className='btn-icon' style={{ color: "#020842" }}>
-                                                                                <i className="fa-solid fa-up-right-from-square"></i>
+                                                                                <i className="fa-solid fa-arrow-right"></i>
                                                                             </span>
                                                                         </a>
                                                                     </div>
@@ -534,7 +534,7 @@ const Header = () => {
                             <a href="" className='free-btn started' style={{ backgroundColor: "white" }}>
                                 <span className='btn-label get' style={{ color: "#020842", padding: "19px 0 16px" }}>Get Started</span>
                                 <span className='btn-icon' style={{ color: "#020842" }}>
-                                    <i className="fa-solid fa-up-right-from-square"></i>
+                                    <i className="fa-solid fa-arrow-right"></i>
                                 </span>
                             </a>
                         </div>

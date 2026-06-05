@@ -23,8 +23,8 @@
   gap: 16px;
   overflow-y: auto;
   overflow-x: hidden;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s;
   z-index: 100;
 }
@@ -432,7 +432,6 @@
   }
 }
 
-/* Dashboard enhancements */
 .dashboard-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

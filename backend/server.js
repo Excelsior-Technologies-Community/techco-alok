@@ -19,6 +19,7 @@ const blogRoutes = require("./Routes/blogRoutes");
 const careerRoutes = require("./Routes/careerRoutes");
 const serviceproRoutes = require("./Routes/serviceproRouter");
 const portfolioRoutes = require("./Routes/portfolioRoutes");
+const serviceRoutes = require("./Routes/serviceRoutes");
 //
 const app = express();
 connectDB();
@@ -40,6 +41,7 @@ app.use("/api/blogs", blogRoutes);
 app.use("/api/career", careerRoutes);
 app.use("/api/servicepro", serviceproRoutes);
 app.use("/api/portfolio", portfolioRoutes);
+app.use("/api/services", serviceRoutes);
 //
 
 app.get("/", (req, res) => {

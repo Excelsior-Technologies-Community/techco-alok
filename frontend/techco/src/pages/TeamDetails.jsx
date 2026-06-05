@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom';
 import { getMemberById, toAssetUrl } from '../api/authApi';
+import CountUp from 'react-countup';
+const ActualCountUp = (CountUp && typeof CountUp === 'object' && 'default' in CountUp) ? CountUp.default : CountUp;
+const easeInOutCubic = (t, b, c, d) => {
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t * t + b;
+    t -= 2;
+    return (c / 2) * (t * t * t + 2) + b;
+};
 import '../styles/all.css';
 
 const TeamDetails = () => {
@@ -131,16 +139,24 @@ const TeamDetails = () => {
                                 {member.skills && member.skills.length > 0 && (
                                     <div className="member-detail-odometers">
                                         <div className="row">
-                                            {member.skills.map((skill, idx) => (
-                                                <div className="col-sm-3" key={idx}>
-                                                    <div className="mter-card">
-                                                        <div className="odometer-skill-card">
-                                                            <div className="odometer-percent-num">{skill.percentage}%</div>
-                                                            <div className="odometer-skill-name">{skill.name}</div>
+                                            {(() => {
+                                                const colors = ['#0044EB', '#FF5E3A', '#6c757d', '#FFA000'];
+                                                return member.skills.map((skill, idx) => {
+                                                    const targetVal = parseInt(skill.percentage, 10) || 0;
+                                                    return (
+                                                        <div className="col-sm-3" key={idx}>
+                                                            <div className="mter-card">
+                                                                <div className="odometer-skill-card" style={{ '--card-border-color': colors[idx % colors.length] }}>
+                                                                    <div className="odometer-percent-num">
+                                                                        <ActualCountUp start={0} end={targetVal} duration={5} enableScrollSpy scrollSpyOnce easingFn={easeInOutCubic} />%
+                                                                    </div>
+                                                                    <div className="odometer-skill-name">{skill.name}</div>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            ))}
+                                                    );
+                                                });
+                                            })()}
                                         </div>
                                     </div>
                                 )}

@@ -260,7 +260,6 @@ export default function Members() {
 
         <hr style={{ margin: "24px 0", borderColor: "#eee" }} />
 
-        {/* Professional Skills Section */}
         <div className="admin-card__title">Professional Skills</div>
         <label className="admin-field">
           <div className="admin-field__label">Skills Paragraph Description</div>
@@ -329,7 +328,6 @@ export default function Members() {
 
         <hr style={{ margin: "24px 0", borderColor: "#eee" }} />
 
-        {/* Education & Qualifications Section */}
         <div className="admin-card__title">Educational Experience & Qualifications</div>
         <label className="admin-field">
           <div className="admin-field__label">Education Paragraph Description</div>

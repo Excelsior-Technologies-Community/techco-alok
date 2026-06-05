@@ -21,6 +21,8 @@ import Portfolio from './pages/Portfolio';
 import Team from './pages/Team';
 import TeamDetails from './pages/TeamDetails';
 import PortfolioDetails from './pages/PortfolioDetails';
+import Services from './pages/Services';
+import SeviceDetail from './pages/SeviceDetail';
 import { AdminRoutes } from './admin/routes/AdminRoutes';
 
 function PublicLayout() {
@@ -52,6 +54,9 @@ function App() {
           <Route path="portfolio" element={<Portfolio />} />
           <Route path="portfolio/:slug" element={<PortfolioDetails />} />
           <Route path="blog/:slug" element={<BlogDetail />} />
+          <Route path="servicespage" element={<Services />} />
+          <Route path="servicedetail" element={<SeviceDetail />} />
+          
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

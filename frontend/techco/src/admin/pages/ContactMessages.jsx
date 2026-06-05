@@ -13,7 +13,6 @@ export default function ContactMessages() {
   const [ok, setOk] = useState("");
   const [messages, setMessages] = useState([]);
 
-  // Reply modal state
   const [replyingTo, setReplyingTo] = useState(null);
   const [replyText, setReplyText] = useState("");
   const [sendingReply, setSendingReply] = useState(false);

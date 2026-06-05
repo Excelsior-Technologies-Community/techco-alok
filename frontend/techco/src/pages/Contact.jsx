@@ -133,7 +133,7 @@ const Contact = () => {
                                                     <button type="submit" disabled={loading} className='free-btn' style={{ border: 'none', cursor: 'pointer' }}>
                                                         <span className='btn-label con-frm'>{loading ? 'Sending...' : 'Send Message'}</span>
                                                         <span className='btn-icon'>
-                                                            <i className="fa-solid fa-up-right-from-square"></i>
+                                                            <i className="fa-solid fa-arrow-right"></i>
                                                         </span>
                                                     </button>
                                                 </div>

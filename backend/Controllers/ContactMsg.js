@@ -58,7 +58,6 @@ const replyToMessage = async (req, res) => {
 
     await message.save();
 
-    // Send email using nodemailer
     try {
       const transporter = require("nodemailer").createTransport({
         service: "gmail",
@@ -78,7 +77,6 @@ const replyToMessage = async (req, res) => {
       await transporter.sendMail(mailOptions);
     } catch (mailError) {
       console.log("Error sending email:", mailError);
-      // We still return 200 because the reply was saved
     }
 
     res.status(200).json({

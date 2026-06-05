@@ -90,6 +90,23 @@ export const updateAboutCard = (cardId, formData) =>
 export const deleteAboutCard = (cardId) =>
   API.delete(`/aboutus/admin/card/${cardId}`);
 
+// ---------- services ----------
+export const getServicesPage = () => API.get("/services");
+export const upsertServicesPage = (formData) =>
+  API.post("/services/admin", formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const addServicesCard = (formData) =>
+  API.post("/services/admin/card", formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const updateServicesCard = (cardId, formData) =>
+  API.put(`/services/admin/card/${cardId}`, formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const deleteServicesCard = (cardId) =>
+  API.delete(`/services/admin/card/${cardId}`);
+
 // ---------- contact msg ----------
 export const getContactMsgs = () => API.get("/contact/admin/msg");
 export const updateContactMsgStatus = (id, status) =>

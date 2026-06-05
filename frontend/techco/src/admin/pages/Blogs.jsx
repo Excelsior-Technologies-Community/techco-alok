@@ -112,7 +112,6 @@ export default function Blogs() {
       if (formData.date) data.append("date", formData.date);
       if (formData.image instanceof File) data.append("image", formData.image);
 
-      // Handle sections
       const sectionsToSubmit = formData.sections.map((s, index) => {
         const cleanSection = { type: s.type, text: s.text };
         if (s.url && !s.file) cleanSection.url = s.url;
@@ -120,8 +119,6 @@ export default function Blogs() {
         return cleanSection;
       });
       data.append("sections", JSON.stringify(sectionsToSubmit));
-
-      // Append section files
       formData.sections.forEach((s, index) => {
         if ((s.type === "image" || s.type === "image-grid" || s.type === "image-list") && s.file) {
           data.append(`sectionImage_${index}`, s.file);

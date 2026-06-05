@@ -13,7 +13,6 @@ const {
   createPortfolio,
 } = require("../Controllers/Portfolio");
 
-// Create portfolio - req.body includes service and industry fields
 router.post(
   "/admin/create",
   authMiddleware,

@@ -30,7 +30,7 @@ const Footer = () => {
                                                     <a href="" className='free-btn'>
                                                         <span className='btn-label contactus-today'>Contact us today!</span>
                                                         <span className='btn-icon'>
-                                                            <i className="fa-solid fa-up-right-from-square"></i>
+                                                            <i className="fa-solid fa-arrow-right"></i>
                                                         </span>
                                                     </a>
                                                 </div>
