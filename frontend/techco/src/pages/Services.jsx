@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getServicesDetails, toAssetUrl } from '../api/authApi'
 import Better from '../components/Better'
+import { Link } from 'react-router-dom'
 
 const Services = () => {
     const [servicesData, setServicesData] = useState(null)
@@ -73,12 +74,12 @@ const Services = () => {
                                                 {servicesData.description}
                                             </p>
                                             <div className="free-button">
-                                                <a href="#featured-services" className="free-btn">
+                                                <Link to="/contact" className="free-btn">
                                                     <span className="btn-label talk-expert-today">TALK TO AN EXPERT</span>
                                                     <span className="btn-icon">
                                                         <i className="fa-solid fa-arrow-right"></i>
                                                     </span>
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>

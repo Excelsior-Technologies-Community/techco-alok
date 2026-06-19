@@ -21,6 +21,9 @@ export const getBlogs = () => API.get("/blogs");
 export const getBlogBySlug = (slug) => API.get(`/blogs/slug/${slug}`);
 export const getPortfolios = () => API.get("/portfolio");
 export const getPortfolioBySlug = (slug) => API.get(`/portfolio/${slug}`);
+export const getStatsData = () => API.get("/stats");
+export const getWorksData = () => API.get("/works");
+export const getTestimonials = () => API.get("/testimonials");
 
 export const toAssetUrl = (maybePath) => {
   if (!maybePath) return "";

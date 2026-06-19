@@ -15,7 +15,7 @@ const statsItemSchema = new mongoose.Schema({
   },
   icon: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
@@ -25,6 +25,22 @@ const statSchema = new mongoose.Schema(
     rightImage: {
       type: String,
       required: true,
+    },
+    heading: {
+      type: String,
+      default: "",
+    },
+    description: {
+      type: String,
+      default: "",
+    },
+    ratingValue: {
+      type: String,
+      default: "",
+    },
+    ratingText: {
+      type: String,
+      default: "",
     },
   },
   { timestamps: true },

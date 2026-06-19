@@ -152,6 +152,50 @@ export const updatePortfolio = (id, formData) =>
   });
 export const deletePortfolio = (id) => API.delete(`/portfolio/admin/delete/${id}`);
 
+// ---------- stats ----------
+export const getStats = () => API.get("/stats");
+export const upsertStats = (formData) =>
+  API.post("/stats/admin", formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const addStatItem = (formData) =>
+  API.post("/stats/admin/item", formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const updateStatItem = (statItemId, formData) =>
+  API.put(`/stats/admin/item/${statItemId}`, formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const deleteStatItem = (statItemId) =>
+  API.delete(`/stats/admin/item/${statItemId}`);
+
+// ---------- works ----------
+export const getWorksPage = () => API.get("/works");
+export const upsertWorksPage = (data) =>
+  API.post("/works/admin", data);
+export const addWorksCard = (formData) =>
+  API.post("/works/admin/card", formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const updateWorksCard = (cardId, formData) =>
+  API.put(`/works/admin/card/${cardId}`, formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const deleteWorksCard = (cardId) =>
+  API.delete(`/works/admin/card/${cardId}`);
+
+// ---------- testimonials ----------
+export const getAdminTestimonials = () => API.get("/testimonials");
+export const createTestimonial = (formData) =>
+  API.post("/testimonials/admin", formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const updateTestimonial = (id, formData) =>
+  API.put(`/testimonials/admin/${id}`, formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+export const deleteTestimonial = (id) => API.delete(`/testimonials/admin/${id}`);
+
 export const toAssetUrl = (maybePath) => {
   if (!maybePath) return "";
   if (/^https?:\/\//i.test(maybePath)) return maybePath;

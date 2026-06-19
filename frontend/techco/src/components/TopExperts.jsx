@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Autoplay, FreeMode } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { getMembers, toAssetUrl } from '../api/authApi';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const TopExperts = () => {
     const [members, setMembers] = useState([]);
@@ -94,14 +94,14 @@ const TopExperts = () => {
                             </Swiper>
                         </div>
                         <div className="our-experts-btn free-button" style={{ textAlign: "center", marginTop: "40px" }}>
-                            <a href="" className='free-btn started' style={{ backgroundColor: "white" }}>
+                            <Link to='/team' className='free-btn started' style={{ backgroundColor: "white" }}>
                                 <span className='btn-label all-experts' style={{ color: "#020842", padding: "19px 0 16px" }}>
                                     Our All Experts
                                 </span>
                                 <span className='btn-icon' style={{ color: "#020842" }}>
                                     <i className="fa-solid fa-arrow-right"></i>
                                 </span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

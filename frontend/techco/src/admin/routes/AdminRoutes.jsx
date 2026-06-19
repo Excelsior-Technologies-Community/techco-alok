@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import Profile from "../pages/Profile";
 import Better from "../pages/Better";
+import Stats from "../pages/Stats";
 import Team from "../pages/Team";
 import Members from "../pages/Members";
 import ContactInfo from "../pages/ContactInfo";
@@ -17,6 +18,8 @@ import ServicePro from "../pages/ServicePro";
 import Services from "../pages/Services";
 import Blogs from "../pages/Blogs";
 import Portfolios from "../pages/Portfolios";
+import Works from "../pages/Works";
+import Testimonials from "../pages/Testimonials";
 
 export function AdminRoutes() {
   return (
@@ -28,8 +31,11 @@ export function AdminRoutes() {
           <Route path="" element={<Dashboard />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="portfolios" element={<Portfolios />} />
+          <Route path="works" element={<Works />} />
+          <Route path="testimonials" element={<Testimonials />} />
           <Route path="profile" element={<Profile />} />
           <Route path="better" element={<Better />} />
+          <Route path="stats" element={<Stats />} />
           <Route path="team" element={<Team />} />
           <Route path="members" element={<Members />} />
           <Route path="contact-info" element={<ContactInfo />} />

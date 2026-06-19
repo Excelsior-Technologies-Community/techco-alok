@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Contact from './pages/Contact';
+import Home from './pages/Home';
 import Career from './pages/Career';
 import About from './pages/About';
 import BlogDetail from './pages/BlogDetail';
@@ -43,7 +44,7 @@ function App() {
 
         {/* Public site */}
         <Route path="/*" element={<PublicLayout />}>
-          <Route path="" element={<div />} />
+          <Route path="home" element={<Home />} />
           <Route path="contactus" element={<Contact />} />
           <Route path="aboutus" element={<About />} />
           <Route path="career" element={<Career />} />

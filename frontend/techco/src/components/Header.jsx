@@ -53,7 +53,7 @@ const Header = () => {
                         <div className="align-items-center main-navbar">
                             <ul className='main-dropdowns'>
                                 <li className='list-items header-drop-btns' style={{ marginLeft: "0" }}>
-                                    <Link>
+                                    <Link to="home">
                                         Home
                                     </Link>
                                 </li>

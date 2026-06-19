@@ -60,8 +60,17 @@ export function AdminLayout() {
           <NavLink to="/admin/portfolios" className="admin-nav__link">
             <i className="fa-solid fa-folder-open" /> Portfolios
           </NavLink>
+          <NavLink to="/admin/works" className="admin-nav__link">
+            <i className="fa-solid fa-images" /> Works
+          </NavLink>
+          <NavLink to="/admin/testimonials" className="admin-nav__link">
+            <i className="fa-solid fa-comment-dots" /> Testimonials
+          </NavLink>
           <NavLink to="/admin/better" className="admin-nav__link">
             <i className="fa-solid fa-star" /> Better
+          </NavLink>
+          <NavLink to="/admin/stats" className="admin-nav__link">
+            <i className="fa-solid fa-chart-line" /> Stats & Odometers
           </NavLink>
           <NavLink to="/admin/about-us" className="admin-nav__link">
             <i className="fa-solid fa-info-circle" /> About Us
